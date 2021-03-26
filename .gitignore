@@ -1,0 +1,4 @@
+certs/
+cmds/client/ca.crt
+
+bin/
