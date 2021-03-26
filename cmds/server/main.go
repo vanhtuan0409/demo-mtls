@@ -38,7 +38,7 @@ func main() {
 		ClientCAs:             caCertPool,
 		ClientAuth:            tls.RequireAndVerifyClientCert,
 		Certificates:          []tls.Certificate{serverCert},
-		VerifyPeerCertificate: verifyClient,
+		VerifyPeerCertificate: verifyClient, // on second thought, we should not do this. TLS should be used for authentication only
 	}
 	tlsConfig.BuildNameToCertificate()
 
@@ -50,6 +50,7 @@ func main() {
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
+		// you can add your own authorization protocol here instead of using `verifyClient`
 		msg := fmt.Sprintf("Hello %s", extractClientName(c))
 		return c.String(http.StatusOK, msg)
 	})
