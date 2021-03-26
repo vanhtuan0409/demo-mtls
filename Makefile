@@ -28,6 +28,14 @@ gen_client_cert:
 		--insecure --no-password
 	cat certs/client.crt certs/intermediate.crt > certs/bundle_client.crt
 
+gen_unauthenticated_client_cert:
+	step-cli certificate create some_othe.client certs/unauthenticated.crt certs/unauthenticated.key \
+		--profile leaf \
+		--ca ./certs/intermediate.crt --ca-key ./certs/intermediate.key \
+		--not-after="2026-01-01T00:00:00Z" \
+		--insecure --no-password
+	cat certs/unauthenticated.crt certs/intermediate.crt > certs/bundle_unauthenticated.crt
+
 build_server:
 	go build -o bin/server ./cmds/server/*.go
 
