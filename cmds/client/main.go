@@ -10,6 +10,7 @@ import (
 	"net/http"
 )
 
+// embeded CACert into client binary
 //go:embed ca.crt
 var caCert []byte
 
