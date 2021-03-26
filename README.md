@@ -36,5 +36,5 @@ mTLS is used in a zero trust environment when you need:
 - Client verify that the destination server is authentic
 - Server verify that the incomming client is authentic
 
-mTLS can help which `authentication/identification` the target server and incomming client. From there, you can add your `authorization` logic whether to accept/denied via `cmds/server/client_verify.go`
+mTLS can help which `authentication/identification` the target server and incomming client. From there, you can add your `authorization` logic whether to accept/denied
 
