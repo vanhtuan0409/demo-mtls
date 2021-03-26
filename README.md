@@ -26,6 +26,8 @@ make build_client
 ./bin/client -cert certs/bundle_unauthenticated.crt -key certs/unauthenticated.key
 ```
 
+![demo](./images/demo.png)
+
 ### Explained
 
 For knowledge about PKI, please read https://smallstep.com/blog/everything-pki/
